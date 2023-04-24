@@ -1,0 +1,46 @@
+POST http://192.168.1.123:3000/login HTTP/1.1
+content-type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+###
+
+POST http://192.168.1.123:3000/users HTTP/1.1
+content-type: application/json
+authorization: Bearer 0.9595457433121015
+
+{
+  "user": {
+    "id": "1",
+    "name": "sample",
+    "email": "smaple@gmail.com",
+    "role": "ADMIN"
+  }
+}
+
+###
+
+GET http://192.168.1.123:3000/users HTTP/1.1
+
+###
+
+GET http://192.168.1.123:3000/users/1 HTTP/1.1
+
+###
+
+PUT http://192.168.1.123:3000/users/2 HTTP/1.1
+content-type: application/json
+
+{
+  "user": {
+    "name": "sample1",
+    "email": "smaple1@gmail.com"
+  }
+}
+
+###
+
+DELETE http://192.168.1.123:3000/users/1 HTTP/1.1
